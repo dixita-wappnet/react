@@ -6,7 +6,7 @@ export default function Home() {
     <div style={{backgroundColor:'grey'}}>
        {/* <h3 style={{backgroundColor:'green',color:'white',textAlign:'center'}}>Hello, I am React-App.</h3> */}
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
-       <img src={pic} style={{width:1200,marginLeft:90,height:570}}/>  
+       <img src={pic} id="demo"/>  
     </div>
   )
 }
