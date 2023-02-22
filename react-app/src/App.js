@@ -19,14 +19,19 @@ function App() {
       type: type
     })
 
+  setTimeout(() => {
+    setAlert()
+  }, 1000)
+
   }
 
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = '#343a40';
+      
       showAlert("Dark mode has been enabled", "success");
-      document.title = "ReactApp - Dark Mode";
+      // document.title = "ReactApp - Dark Mode";
 
       // setInterval (() => {
 
@@ -43,7 +48,7 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = '#ced4da';
       showAlert("Light mode has been enabled", "warning");
-      document.title = "ReactApp - Light Mode";
+      // document.title = "ReactApp - Light Mode";
     }
   }
   return (
@@ -52,15 +57,19 @@ function App() {
       {/* <Navbar/>
       <Navbar title="ReactApp" /> */}
       
-      <Alert alert={alert} />
+      
       <BrowserRouter>
       <Navbar title="ReactApp" aboutText="About us" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <br/>
         <Routes>
-          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />}></Route>
+          <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/home" element={<TextForm showAlert={showAlert} heading="Try TranslateText - Word counter, Character counter, Remove extra Spaces" mode={mode} />}></Route>
           <Route exact path="/about" element={<About />}></Route>
-          <Route exact path="/home" element={<Home/>}></Route>
         </Routes>
+        
       </BrowserRouter>
+      
     </>
   );
 }

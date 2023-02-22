@@ -10,7 +10,7 @@ export default function Navbar(props) {
         <>
          <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
            <div className="container-fluid">
-               <NavLink className="navbar-brand" to="/home">{props.title}</NavLink>
+               <NavLink className="navbar-brand" to="/">{props.title}</NavLink>
                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                    <span className="navbar-toggler-icon"></span>
                </button>
@@ -20,8 +20,12 @@ export default function Navbar(props) {
                            <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
                        </li>
                        <li className="nav-item">
+                           <NavLink className="nav-link" to="/home">Inspect</NavLink>
+                       </li>
+                       <li className="nav-item">
                            <NavLink className="nav-link" to="/about">{props.aboutText}</NavLink>
                        </li>
+                       
                    </ul>
                    {/* <form className="d-flex" role="search">
                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
